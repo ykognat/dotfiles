@@ -7,17 +7,18 @@ fi
 
 # Basic
 PATH=$PATH:$HOME/.scripts
-export editor='nvim'
+export EDITOR='nvim'
 export BROWSER='firefox'
 export MANPAGER='nvim +Man!'
-export PATH=~/.local/bin:$PATH #PTSH
-export TERM="xterm-256color"
+export TERMINAL="alacritty"
 #bindkey -v
 #autoload -Uz compinit && compinit
 #zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 # Prompt
 #PROMPT='%F{yellow}%1~%f %F{red}%f '
+neofetch
+
 
 # Git right side prompt
 autoload -Uz vcs_info
@@ -33,6 +34,8 @@ alias ll='exa -lah'
 alias v='nvim'
 alias weather='curl wttr.in'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias xin='sudo xbps-install'
+alias xqr='xbps-query'
 
 # plugins
 source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
