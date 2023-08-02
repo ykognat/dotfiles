@@ -10,14 +10,14 @@ PATH=$PATH:$HOME/.scripts
 export EDITOR='nvim'
 export BROWSER='firefox'
 export MANPAGER='nvim +Man!'
-export TERMINAL="alacritty"
+export TERMINAL="st"
 #bindkey -v
 #autoload -Uz compinit && compinit
 #zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 # Prompt
 #PROMPT='%F{yellow}%1~%f %F{red}%f '
-neofetch
+#neofetch
 
 
 # Git right side prompt
@@ -36,6 +36,41 @@ alias weather='curl wttr.in'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias xin='sudo xbps-install'
 alias xqr='xbps-query'
+alias xrm='sudo xbps-remove'
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+# Pomodoro
+declare -A pomo_options
+pomo_options["work"]="45"
+pomo_options["break"]="10"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat
+  termdown ${pomo_options["$val"]}m
+  notify-send "'$val' session done"
+  espeak -v en+f3 -p 60 -s 150 "'$val' session done"
+  fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
+
+
+# Custom ffmpeg function to convert to VP9 webm
+convert2vp9() {
+    # If the third argument is given, use it as the quality level, otherwise default to 31.
+    local quality=${3:-31}
+    ffmpeg -i "$1" -c:v libvpx-vp9 -crf "$quality" -b:v 0 -an "$2"
+}
+
+alias cvp9=convert2vp9
+
 
 # plugins
 source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
