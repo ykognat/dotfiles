@@ -50,13 +50,23 @@ pomo_options["break"]="10"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
-  val=$1
-  echo $val | lolcat
-  termdown ${pomo_options["$val"]}m
-  notify-send "'$val' session done"
-  espeak -v en+f3 -p 60 -s 150 "'$val' session done"
+    val=$1
+    echo $val | lolcat
+
+    if command -v termdown > /dev/null; then
+      termdown ${pomo_options["$val"]}m
+    elif command -v timer > /dev/null; then
+      timer ${pomo_options["$val"]}m
+    else
+      echo "Neither termdown nor timer is installed on your system."
+      return 1
+    fi
+
+    notify-send "'$val' session done"
+    espeak -v en+f3 -p 60 -s 150 "'$val' session done"
   fi
 }
+
 
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
