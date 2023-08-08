@@ -44,9 +44,14 @@ output * bg ~/Media/Wallpapers/wallpaperflare-cropped.jpg fill
 # Example configuration:
 #
 # exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+          #timeout 300 'swaylock -f -c 000000' \
+          #timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          #before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+          #timeout 300 'swaylock -f -i ~/Media/Wallpapers/wallpaperflare-cropped.jpg -c 000000' \
+          #timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          #before-sleep 'swaylock -f -i ~/Media/Wallpapers/wallpaperflare-cropped.jpg -c 000000'
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -212,13 +217,23 @@ bindsym $mod+p resize shrink width 10px
 
 
 # hide titlebars
-font pango:monospace 0
+#font pango:monospace 0
 #font Mononoki Nerd Font 0
-#titlebar_border_thickness 1
-titlebar_padding 1
+#titlebar_border_thickness 0
+#titlebar_padding 0
+smart_borders on
 
+gaps inner 3
+gaps outer 3
+smart_gaps on
+
+#default_border none
+#for_window [title="^.*"] title_format ""
+
+#hide_edge_borders --i3 smart
 #default_border normal
-#default_border pixel 4
+default_border pixel 1
+#default_border normal 1
 #default_border none
 
 #########################
