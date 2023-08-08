@@ -217,10 +217,10 @@ bindsym $mod+p resize shrink width 10px
 
 
 # hide titlebars
-#font pango:monospace 0
+font pango:monospace 0
 #font Mononoki Nerd Font 0
-#titlebar_border_thickness 0
-#titlebar_padding 0
+titlebar_border_thickness 0
+titlebar_padding 1
 smart_borders on
 
 gaps inner 3
