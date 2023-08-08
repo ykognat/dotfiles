@@ -224,8 +224,8 @@ bindsym $mod+p resize shrink width 10px
 smart_borders on
 
 gaps inner 3
-gaps outer 3
-smart_gaps on
+gaps outer 2
+#smart_gaps on
 
 #default_border none
 #for_window [title="^.*"] title_format ""
