@@ -8,7 +8,7 @@ window .modules-left #workspaces {
 window#waybar {
     border-radius: 0;
     font-weight: 500;
-    font-size: 11px;
+    font-size: 10px;
     background: shade(alpha(@theme_base_color, 1), 1);
     /*background: shade(alpha(@borders, 0.8), 1);*/
     /*border-bottom: 1px solid alpha(@unfocused_borders, 0.85); */
