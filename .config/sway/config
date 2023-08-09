@@ -20,12 +20,18 @@ set $term foot
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # Recommends: rofi-wayland
+
 set $rofi_cmd rofi \
         -terminal '$term'
+
 # Shows a combined list of the applications with desktop files and
 # executables from PATH.
 # TODO: add window with the next release of rofi-wayland
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+#set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+set $menu dmenu_run -nb '#1E2327' -nf '#C0C0C0' -sb '#C0C0C0' -sf '#000000' \
+-fn 'Mononoki Nerd Font-10'
+
 
 ### Output configuration
 #
@@ -248,15 +254,18 @@ workspace 2
 exec anki 
 
 # set colors
-set $bg #2D353B
 #set $fg #D3C6AA
 set $br #D3C6AA
+set $bg #2D353B
 set $bg_dim #232A25
 
+set $br_wbr #BFC4B6
+set $bg_wbr #1E2327
+
 # class                 border  backgr.   text      indicator child_border
-client.focused          $br     $br       #000000   $bg       $br
-client.unfocused        $bg_dim $bg_dim   #C0C0C0   $bg       $bg_dim
-client.focused_inactive $bg_dim $bg_dim   #C0C0C0   $bg       $bg_dim
+client.focused          $br_wbr     $br_wbr       #000000   $bg_wbr       $br_wbr
+client.unfocused        $bg_dim $bg_dim   #C0C0C0   $bg_wbr       $bg_dim
+client.focused_inactive $bg_dim $bg_dim   #C0C0C0   $bg_wbr       $bg_dim
 
 include colorscheme
 
