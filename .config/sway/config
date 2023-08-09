@@ -248,12 +248,15 @@ workspace 2
 exec anki 
 
 # set colors
-set $bg #D3C6AA
-set $fg #D3C6AA
+set $bg #2D353B
+#set $fg #D3C6AA
 set $br #D3C6AA
+set $bg_dim #232A25
 
-# class                 border  backgr. text    indicator child_border
-client.focused          $br     $br     000000     $bg       $br
+# class                 border  backgr.   text      indicator child_border
+client.focused          $br     $br       #000000   $bg       $br
+client.unfocused        $bg_dim $bg_dim   #C0C0C0   $bg       $bg_dim
+client.focused_inactive $bg_dim $bg_dim   #C0C0C0   $bg       $bg_dim
 
 include colorscheme
 
@@ -263,14 +266,6 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Everforest-Dark-BL'
     #gsettings set $gnome-schema icon-theme 'Dracula'
 }
-
-#client.<class>         <border>  <background>    <text>      <indicator>   <child_border> 
-
-# client.focused          "#2c2c2c" "#dddfe2"      "#000000"   "$foreground" "#2c2c2c"
-
-# client.focused_inactive "#23242a" "$background"  "#666666"   "#000000"     "#999999"
-
-# client.unfocused        "#666666" "#fff5e5"      "#666666"   "#000000"     "#999999"
 
 #enable touchpad tap click
 input "type:touchpad" {
