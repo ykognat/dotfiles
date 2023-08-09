@@ -29,7 +29,7 @@ set $rofi_cmd rofi \
 # TODO: add window with the next release of rofi-wayland
 
 #set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-set $menu dmenu_run -nb '#1E2327' -nf '#C0C0C0' -sb '#C0C0C0' -sf '#000000' \
+set $menu dmenu_run -nb '#1E2327' -nf '#C0C0C0' -sb '#BFC4B6' -sf '#000000' \
 -fn 'Mononoki Nerd Font-10'
 
 
