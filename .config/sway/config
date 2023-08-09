@@ -253,7 +253,7 @@ set $fg #D3C6AA
 set $br #D3C6AA
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $br     $br     $fg     $bg       $br
+client.focused          $br     $br     000000     $bg       $br
 
 include colorscheme
 
