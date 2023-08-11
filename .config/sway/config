@@ -28,9 +28,9 @@ set $rofi_cmd rofi \
 # executables from PATH.
 # TODO: add window with the next release of rofi-wayland
 
-#set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-set $menu dmenu_run -nb '#1E2327' -nf '#C0C0C0' -sb '#BFC4B6' -sf '#000000' \
--fn 'Mononoki Nerd Font-10'
+set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+#set $menu dmenu_run -nb '#1E2327' -nf '#C0C0C0' -sb '#BFC4B6' -sf '#000000' \
+#-fn 'Mononoki Nerd Font-10'
 
 
 ### Output configuration
@@ -263,9 +263,9 @@ set $br_wbr #BFC4B6
 set $bg_wbr #1E2327
 
 # class                 border  backgr.   text      indicator child_border
-client.focused          $br_wbr     $br_wbr       #000000   $bg_wbr       $br_wbr
-client.unfocused        $bg_dim $bg_dim   #C0C0C0   $bg_wbr       $bg_dim
-client.focused_inactive $bg_dim $bg_dim   #C0C0C0   $bg_wbr       $bg_dim
+client.focused          $br_wbr $br_wbr   #000000   $bg_wbr       $br_wbr
+client.unfocused        $bg_wbr $bg_wbr   #C0C0C0   $bg_wbr       $bg_wbr
+client.focused_inactive $bg_wbr $bg_wbr   #C0C0C0   $bg_wbr       $bg_wbr
 
 include colorscheme
 
