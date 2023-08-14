@@ -37,10 +37,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias xin='sudo xbps-install'
 alias xqr='xbps-query'
 alias xrm='sudo xbps-remove'
-alias tmxat='tmux attach -t'
-alias tmxnw='tmux new -s'
-alias tmxkl='tmux kill-session -t'
-alias tmxll='tmux ls'
+alias tmat='tmux attach -t'
+alias tmnw='tmux new -s'
+alias tmkl='tmux kill-session -t'
+alias tmll='tmux ls'
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
