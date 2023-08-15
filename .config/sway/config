@@ -9,10 +9,10 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
-set $left j
-set $down n
-set $up m
-set $right k
+set $left h
+set $down j
+set $up k
+set $right l
 # Your preferred terminal emulator
 # Recommends: foot
 set $term foot
@@ -129,8 +129,8 @@ output * bg ~/Media/Wallpapers/wallpaperflare-cropped.jpg fill
 #
 # Workspaces:
     # Switch to workspace on the right
-    bindsym $mod+semicolon workspace next 
-    bindsym $mod+l workspace prev 
+    bindsym $mod+n workspace next 
+    bindsym $mod+p workspace prev 
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -216,10 +216,10 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 #bindsym $mod+o mode "resize"
-bindsym $mod+u resize grow height 10px
-bindsym $mod+i resize shrink height 10px
-bindsym $mod+o resize grow width 10px
-bindsym $mod+p resize shrink width 10px
+bindsym $mod+equal resize grow height 10px
+bindsym $mod+minus resize shrink height 10px
+bindsym $mod+period resize grow width 10px
+bindsym $mod+comma resize shrink width 10px
 
 
 # hide titlebars
