@@ -77,6 +77,13 @@ output * bg ~/Media/Wallpapers/wallpaperflare-cropped.jpg fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input "6127:24647:Lenovo ThinkPad Compact USB Keyboard with TrackPoint" {
+    accel_profile flat
+    pointer_accel 1
+    #tap enabled
+}
+
+
 ### Key bindings
 #
 # Basics:
@@ -224,7 +231,7 @@ bindsym $mod+comma resize shrink width 10px
 
 # hide titlebars
 #font pango:monospace 0
-font pango:Mononoki Nerd Font 9
+font pango:Mononoki Nerd Font 10
 #titlebar_border_thickness 0
 titlebar_padding 1
 smart_borders on
@@ -289,6 +296,7 @@ seat seat0 hide_cursor 30000
 # my vars
 set $brightness_step 1
 set $volume_step 1
+
 
 # desktop portal (screensharing)
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

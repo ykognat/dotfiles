@@ -11,6 +11,7 @@ export EDITOR='nvim'
 export BROWSER='firefox'
 export MANPAGER='nvim +Man!'
 export TERMINAL="st"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 #bindkey -v
 #autoload -Uz compinit && compinit
 #zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
@@ -45,12 +46,12 @@ alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
-alias ..5="cd ../../../../.."
 
+alias ..5="cd ../../../../.."
 # Pomodoro
 declare -A pomo_options
 pomo_options["work"]="45"
-pomo_options["break"]="10"
+pomo_options["break"]="15"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then

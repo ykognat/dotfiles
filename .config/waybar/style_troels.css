@@ -8,7 +8,7 @@ window .modules-left #workspaces {
 window#waybar {
     border-radius: 0;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 13px;
     background: shade(alpha(@theme_base_color, 1), 1);
     /*background: shade(alpha(@borders, 0.8), 1);*/
     /*border-bottom: 1px solid alpha(@unfocused_borders, 0.85); */
@@ -18,7 +18,7 @@ window#waybar {
 }
 
 window .modules-left #workspaces button {
-    font-size: 9px;
+    font-size: 13px;
     box-shadow: none;
     min-height: 0;
     min-width: 30px;
