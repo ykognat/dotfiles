@@ -39,7 +39,7 @@ vim.o.showcmd = true
 
 -- Enable line and column highlight
 -- vim.o.cursorline = true
-vim.wo.colorcolumn = '79'
+vim.wo.colorcolumn = '80'
 
 -- Create backups before overwriting a file
 vim.o.backup = false
