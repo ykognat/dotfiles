@@ -198,7 +198,7 @@ input "6127:24647:Lenovo ThinkPad Compact USB Keyboard with TrackPoint" {
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+bracketleft scratchpad show
+    bindsym $mod+apostrophe scratchpad show
 #
 # Resizing containers:
 #
@@ -252,7 +252,8 @@ default_border pixel 1
 #########################
 # autostart apps
 exec flameshot
-exec fcitx5 # don't forget to set stuff in ~/.pam_environment
+# don't forget to set stuff in ~/.pam_environment
+exec fcitx5 
 workspace 1
 exec firefox 
 exec syncthing

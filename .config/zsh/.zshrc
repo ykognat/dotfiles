@@ -50,8 +50,8 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 # Pomodoro
 declare -A pomo_options
-pomo_options["work"]="45"
-pomo_options["break"]="15"
+pomo_options["work"]="35"
+pomo_options["break"]="10"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
