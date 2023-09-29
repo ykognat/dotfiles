@@ -11,7 +11,7 @@ vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
 
 -- Enable line wrapping
-vim.wo.wrap = true
+vim.wo.wrap = false
 
 -- Enable mouse in all modes
 vim.o.mouse = 'a'
