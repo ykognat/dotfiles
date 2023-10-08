@@ -3,7 +3,9 @@ unclutter -idle 30 -noevents & fcitx5 -d & Discord & /usr/libexec/notification-d
 #st -e newsboat  &
 #sleep 1
 st &
-#sleep 1
+sleep 1
 #st -e ncmpcpp & 
+sxhkd &
+setxkbmap us -variant colemak_dh &
 sleep 5
 # redshift-gtk -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq -r '"\(.location.lat):\(.location.lng)"')

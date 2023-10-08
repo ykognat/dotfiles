@@ -1,0 +1,39 @@
+[semimak_jq:layout]
+
+q = f
+w = l
+e = h
+r = v
+t = z
+
+y = '
+u = w
+i = u
+o = o
+p = y
+
+a = s
+s = r
+d = n
+f = t
+g = k
+
+h = c
+j = d
+k = e
+l = a
+; = i
+' = ;
+
+z = x
+x = j
+c = b
+v = m
+b = q
+
+n = p
+m = g
+, = ,
+. = .
+/ = /
+
