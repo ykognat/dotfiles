@@ -58,6 +58,7 @@ output * bg ~/Media/Wallpapers/wallpaperflare-cropped.jpg fill
           #timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           #before-sleep 'swaylock -f -i /home/peter/Media/Wallpapers/wallpaperflare-cropped.jpg -c 000000'
 
+bindsym $mod+l exec loginctl lock-session
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -164,6 +165,7 @@ input "6127:24647:Lenovo ThinkPad Compact USB Keyboard with TrackPoint" {
     # We just use 1-10 as the default.
 
 # Monitor stuff
+  # For GUI use 'wdisplays'
   # Move to the next monitor
   bindsym $mod+Shift+n exec /home/peter/.local/bin/move_workspace_sway.sh next
 
