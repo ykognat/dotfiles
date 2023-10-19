@@ -170,7 +170,8 @@ input "6127:24647:Lenovo ThinkPad Compact USB Keyboard with TrackPoint" {
   # Move to the previous monitor
   bindsym $mod+Shift+p exec /home/peter/.local/bin/move_workspace_sway.sh prev
 
-
+  # Disable laptop screen
+  bindsym $mod+Delete output eDP-1 toggle
 
 #
 # Layout stuff:
