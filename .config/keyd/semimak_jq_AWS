@@ -1,0 +1,49 @@
+[semimak_jq_AWS:layout]
+
+# number row
+7 = \
+8 = 7
+9 = 8
+0 = 9
+- = 0
+
+# top letter row
+q = f
+w = l
+e = h
+r = v
+t = z
+y = [
+u = '
+i = w
+o = u
+p = o
+[ = y
+] = -
+\ = ;
+
+# middle letter row
+a = s
+s = r
+d = n
+f = t
+g = k
+h = ]
+j = c
+k = d
+l = e
+; = a
+' = i
+
+# bottom letter row
+z = j
+x = b
+c = m
+v = q
+b = x
+n = /
+m = p
+, = g
+. = ,
+/ = .
+
