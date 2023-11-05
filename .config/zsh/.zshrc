@@ -31,7 +31,7 @@ zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 # Aliases
-alias ll='exa -lah'
+alias ll='eza -lah'
 alias v='nvim'
 alias weather='curl wttr.in'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -85,6 +85,10 @@ convert2vp9() {
 }
 
 alias cvp9=convert2vp9
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 
 # plugins
