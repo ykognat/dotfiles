@@ -49,9 +49,9 @@ m = p
 
 a = overloadt(meta, s, 180)
 s = overloadt(alt, r, 180)
-d = overloadt(control, n, 180)
-f = overloadt(shift, t, 180)
-k = overloadt(shift, d, 180)
-l = overloadt(control, e, 180)
+d = overloadt(shift, n, 180)
+f = overloadt(control, t, 180)
+k = overloadt(control, d, 180)
+l = overloadt(shift, e, 180)
 ; = overloadt(alt, a, 180)
 ' = overloadt(meta, i, 180)
