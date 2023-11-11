@@ -1,0 +1,65 @@
+(defvar
+  tap-timeout   100
+  hold-timeout  180
+  tt $tap-timeout
+  ht $hold-timeout
+)
+(defalias
+  tel (layer-toggle tab_extend_layer)
+  mml (layer-toggle mouse_move_layer)
+
+  s_meta (tap-hold $tt $ht s met)
+  r_alt (tap-hold $tt $ht r alt)
+  n_sft (tap-hold $tt $ht n sft)
+  t_ctl (tap-hold $tt $ht t ctl)
+  d_ctl (tap-hold $tt $ht d ctl)
+  e_sft (tap-hold $tt $ht e sft)
+  a_alt (tap-hold $tt $ht a alt)
+  i_meta (tap-hold $tt $ht i met)
+)
+(defalias
+  mwu (mwheel-up 50 120)
+  mwd (mwheel-down 50 120)
+  mwl (mwheel-left 50 120)
+  mwr (mwheel-right 50 120)
+
+  ms↑ (movemouse-up 1 1)
+  ms← (movemouse-left 1 1)
+  ms↓ (movemouse-down 1 1)
+  ms→ (movemouse-right 1 1)
+
+  ma↑ (movemouse-accel-up 10 2000 1 30)
+  ma← (movemouse-accel-left 10 2000 1 30)
+  ma↓ (movemouse-accel-down 10 2000 1 30)
+  ma→ (movemouse-accel-right 10 2000 1 30)
+
+  fms (movemouse-speed 200)
+)
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+(deflayer semimak_jq_AWS
+  grv  1    2    3    4    5    6    \    7    8    9    0    =    bspc
+  tab  f    l    h    v    z    [    '    w    u    o    y    -    ;
+  @tel @s_meta    @r_alt    @n_sft    @t_ctl    k    ]    c    @d_ctl    @e_sft    @a_alt    @i_meta    ret
+  lsft j    b    m    q    x    /    p    g    ,    .    rsft
+  lctl lmet lalt           spc            @mml rmet rctl
+)
+(deflayer tab_extend_layer
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
+  tab  esc  _    _    _    _    _    pgup home up   end  del  _    _
+  _    met  alt  sft  ctl  _    _    pgdn left down rght bks  ret
+  lsft _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              spc            _    _    _
+)
+(deflayer mouse_move_layer
+  _    _    _    _    _    _     _    _    _    _    _    _    _    _
+  _    _    _    _    _    _     _    @mwu _    @ma↑ _    _    _    _
+  _    _    _    _    _    mrgt _    @mwd @ma← @ma↓ @ma→ _    _
+  _    _    _    _    _    _     _    _    _    _    _    _
+  _    _    _              mlft           _    _    _
+)
