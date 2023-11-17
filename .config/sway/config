@@ -9,10 +9,10 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys
-set $left d
-set $down e
-set $up a
-set $right i
+set $left h
+set $down j
+set $up k
+set $right l
 # Your preferred terminal emulator
 # Recommends: foot
 set $term foot
@@ -58,7 +58,7 @@ output * bg ~/Media/Wallpapers/lainpaper.jpg fill
           #timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           #before-sleep 'swaylock -f -i /home/peter/Media/Wallpapers/wallpaperflare-cropped.jpg -c 000000'
 
-bindsym $mod+l exec loginctl lock-session
+bindsym $mod+End exec loginctl lock-session
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -267,7 +267,7 @@ default_border pixel 1
 
 #########################
 # start key remapper, hold lctrl + space + esc to shut it down
-bindsym $mod+k exec sudo /usr/local/bin/kanata --cfg /home/peter/.config/kanata/keymap.kbd
+bindsym $mod+Home exec sudo /usr/local/bin/kanata --cfg /home/peter/.config/kanata/keymap.kbd
 exec sudo /usr/local/bin/kanata --cfg /home/peter/.config/kanata/keymap.kbd
 
 
