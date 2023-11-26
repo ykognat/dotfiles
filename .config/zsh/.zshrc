@@ -5,13 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Basic
-PATH=$PATH:$HOME/.scripts
-export EDITOR='nvim'
-export BROWSER='firefox'
-export MANPAGER='nvim +Man!'
-export TERMINAL="st"
-export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 #bindkey -v
 #autoload -Uz compinit && compinit
 #zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
@@ -19,6 +12,13 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 # Prompt
 #PROMPT='%F{yellow}%1~%f %F{red}%f '
 #neofetch
+
+# temporary solution for two computers
+export EDITOR='nvim'
+export BROWSER='firefox'
+export MANPAGER='nvim +Man!'
+export TERMINAL="st"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 
 # Git right side prompt

@@ -22,26 +22,26 @@
   lrld_rctl (tap-hold $tt $ht lrld rctl)
 )
 (defalias
-  mwu (mwheel-up 50 120)
-  mwd (mwheel-down 50 120)
-  mwl (mwheel-left 50 120)
-  mwr (mwheel-right 50 120)
+  mwu (mwheel-up 60 120)
+  mwd (mwheel-down 60 120)
+  mwl (mwheel-left 60 120)
+  mwr (mwheel-right 60 120)
 
   ms↑ (movemouse-up 1 1)
   ms← (movemouse-left 1 1)
   ms↓ (movemouse-down 1 1)
   ms→ (movemouse-right 1 1)
 
-  ma↑ (movemouse-accel-up 10 1500 1 30)
-  ma← (movemouse-accel-left 10 1500 1 30)
-  ma↓ (movemouse-accel-down 10 1500 1 30)
-  ma→ (movemouse-accel-right 10 1500 1 30)
+  ma↑ (movemouse-accel-up 10 1200 1 50)
+  ma← (movemouse-accel-left 10 1200 1 50)
+  ma↓ (movemouse-accel-down 10 1200 1 50)
+  ma→ (movemouse-accel-right 10 1200 1 50)
 
   fms (movemouse-speed 400)
-  sms (movemouse-speed 50)
+  sms (movemouse-speed 10)
 )
 (defsrc
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
@@ -56,17 +56,17 @@
 )
 (deflayer tab_extend_layer
   _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
-  tab  esc  _    _    _    _    _    pgup home up   end  del  _    _
-  _    met  alt  sft  ctl  _    _    pgdn left down rght bks  ret
-  lsft _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              spc            _    _    _
+  tab  esc  _    _    _    _    _    _    home up   end  del  ins  _
+  _    met  alt  sft  ctl  _    _    _    left down rght bks  ret
+  lsft _    _    _    _    _    _    pgup pgdn _    _    _
+  lctl _    _              spc            _    _    _
 )
 (deflayer mouse_move_layer
-  _    _    _    _    _    _     _    _    _    _    _    _    _    _
-  _    _    @sms @fms _    _     _    @mwu @mwl @ma↑ @mwr _    _    _
-  @syl met  alt  sft  ctl  mrgt  _    @mwd @ma← @ma↓ @ma→ _    _
-  _    _    _    _    _    _     _    _    _    _    _    _
-  _    _    _              mlft            _    _    _
+  _    mute voldwn volu prev pp    next _    _    _    brdn bru  _    _
+  _    _    @sms   @fms _    _     _    _    @mwl @ma↑ @mwr del  ins  _
+  @syl met  alt    sft  ctl  mrgt  _    _    @ma← @ma↓ @ma→ bks  ret
+  _    _    _      _    _    _     _    @mwu @mwd _    _    _
+  _    _    _                mlft            _    _    _
 )
 (deflayer symbols_layer
   _    _    _    _    _    _     _    _    _    _    _    _    _    _
