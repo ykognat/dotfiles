@@ -19,7 +19,10 @@ export BROWSER='firefox'
 export MANPAGER='nvim +Man!'
 export TERMINAL="st"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
-
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export PATH=/home/peter/.local/bin:$PATH
 
 # Git right side prompt
 autoload -Uz vcs_info

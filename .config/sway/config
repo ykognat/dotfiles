@@ -24,6 +24,8 @@ set $term foot
 set $rofi_cmd rofi \
         -terminal '$term'
 
+set $vifm_cmd vifm
+
 # Shows a combined list of the applications with desktop files and
 # executables from PATH.
 # TODO: add window with the next release of rofi-wayland
@@ -214,7 +216,55 @@ output HDMI-A-1 position 1600 0
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+apostrophe scratchpad show
+    #bindsym $mod+apostrophe scratchpad show
+
+########### 
+#scratchpad stuff
+set {
+  $scratch_term flatpak run org.wezfurlong.wezterm start --class scratch_term
+  $scratch_term_id scratch_term
+
+  $scratch_fm flatpak run org.wezfurlong.wezterm start --class scratch_vifm -e vifm ~
+  $scratch_fm_id scratch_vifm
+
+  $t_pos border none, move position center, resize set width 100 ppt height 100 ppt
+}
+
+for_window {
+  # main terminal
+  [app_id=$scratch_term_id] {
+    move to scratchpad
+    [app_id=$scratch_term_id] scratchpad show
+    $t_pos
+  }
+#  # file manager
+  [app_id=$scratch_fm_id] {
+    move to scratchpad
+    [app_id=$scratch_fm_id] scratchpad show
+    $t_pos
+  }
+#  # emacs
+#  [app_id=$editor_id] {
+#    move to scratchpad
+#    [app_id=$editor_id] scratchpad show
+#    $t_pos
+#  }
+}
+
+bindsym --to-code {
+  # Scratchpad bindsym
+  ## Main terminal
+  $mod+apostrophe exec swaymsg [app_id=$scratch_term_id] scratchpad show || exec $scratch_term 
+  #,  $t_pos
+  $mod+semicolon exec swaymsg [app_id=$scratch_fm_id] scratchpad show || exec $scratch_fm 
+  #,  $t_pos
+  ## backup terminal
+  #$mod+F1      exec swaymsg [app_id=$oterm_id]  scratchpad show || exec $oterm,  $t_pos
+  ## editor
+  #$mod+x       exec swaymsg [app_id=$editor_id] scratchpad show || exec $editor, $t_pos
+}
+exec $term
+##############
 #
 # Resizing containers:
 #
@@ -252,8 +302,11 @@ font pango:Mononoki Nerd Font 10
 titlebar_padding 1
 smart_borders on
 
-gaps inner 3
-gaps outer 2
+#
+#gaps inner 3
+#gaps outer 2
+#
+
 #smart_gaps on
 
 #default_border none
@@ -273,13 +326,11 @@ exec sudo /usr/local/bin/kanata --cfg /home/peter/.config/kanata/keymap.kbd
 
 # autostart apps
 exec flameshot
-# don't forget to set stuff in ~/.pam_environment
 exec fcitx5 
+exec syncthing
 workspace 1
 exec firefox 
-exec syncthing
-
-workspace 2
+workspace 3
 exec anki 
 
 # set colors
