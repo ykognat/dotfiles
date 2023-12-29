@@ -254,9 +254,9 @@ for_window {
 bindsym --to-code {
   # Scratchpad bindsym
   ## Main terminal
-  $mod+apostrophe exec swaymsg [app_id=$scratch_term_id] scratchpad show || exec $scratch_term 
+  $mod+semicolon exec swaymsg [app_id=$scratch_term_id] scratchpad show || exec $scratch_term 
   #,  $t_pos
-  $mod+semicolon exec swaymsg [app_id=$scratch_fm_id] scratchpad show || exec $scratch_fm 
+  $mod+Shift+semicolon exec swaymsg [app_id=$scratch_fm_id] scratchpad show || exec $scratch_fm 
   #,  $t_pos
   ## backup terminal
   #$mod+F1      exec swaymsg [app_id=$oterm_id]  scratchpad show || exec $oterm,  $t_pos
