@@ -116,10 +116,10 @@ source $ZSH/oh-my-zsh.sh
 
 # from old .zshrc:
 
-# temporary solution for two computers
-# export EDITOR='nvim'
-# export BROWSER='firefox'
-# export MANPAGER='nvim +Man!'
+export EDITOR='nvim'
+export VISUAL='nvim'
+export BROWSER='firefox'
+export MANPAGER='nvim +Man!'
 # export TERMINAL="alacritty"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export XMODIFIERS=@im=fcitx

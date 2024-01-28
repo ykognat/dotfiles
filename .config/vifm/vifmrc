@@ -571,7 +571,8 @@ nnoremap <c-u> <c-w>x
 " my config
 " ------------------------------------------------------------------------------
 set dotfiles
-colorscheme zenburn_1
+set sort=mtime
+colorscheme monochrome
 command! dragon dragon-drop -a -x %f
 nmap <C-d> :dragon<CR>
 nmap ; :

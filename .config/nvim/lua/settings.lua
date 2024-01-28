@@ -55,5 +55,7 @@ vim.o.swapfile = false
 vim.o.splitright = true
 -- Determine how new horizontal split windows are positioned
 vim.o.splitbelow = true
+-- Enable 24-bit RGB colors
+vim.o.termguicolors = true
 
-vim.cmd([[colorscheme everforest]])
+vim.cmd([[colorscheme moonfly]])
