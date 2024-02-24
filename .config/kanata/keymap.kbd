@@ -22,10 +22,10 @@
   lrld_rctl (tap-hold $tt $ht lrld rctl)
 )
 (defalias
-  mwu (mwheel-up 60 120)
-  mwd (mwheel-down 60 120)
-  mwl (mwheel-left 60 120)
-  mwr (mwheel-right 60 120)
+  mwu (mwheel-up 30 30)
+  mwd (mwheel-down 30 30)
+  mwl (mwheel-left 30 30)
+  mwr (mwheel-right 30 30)
 
   ms↑ (movemouse-up 1 1)
   ms← (movemouse-left 1 1)
@@ -40,6 +40,16 @@
   fms (movemouse-speed 400)
   sms (movemouse-speed 10)
 )
+(defchords fycaps 200
+  (f) f
+  (y) y
+  (f y) (caps-word 2000)
+)
+(defchords siesc 200
+  (s) @s_meta
+  (i) @i_meta
+  (s i) esc
+)
 (defsrc
   esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
@@ -49,23 +59,23 @@
 )
 (deflayer semimak_jq_AWS
   grv  1       2      3      4      5    6    \    7      8      9      0       =  bspc
-  tab  f       l      h      v      z    [    '    w      u      o      y       -  ;
-  @tel @s_meta @r_alt @n_sft @t_ctl k    ]    c    @d_ctl @e_sft @a_alt @i_meta    ret
-  lsft j       b      m      q      x    /    p    g      ,      .      @mhnk_rsft
-  lctl lmet    lalt                 spc            @mml   prnt   @lrld_rctl
+  tab  (chord fycaps f)       l      h      v      z    [    '    w      u      o      (chord fycaps y)       -  ;
+  @tel (chord siesc s) @r_alt @n_sft @t_ctl k    ]    c    @d_ctl @e_sft @a_alt (chord siesc i)    ret
+  lsft j       b      m      q      x    /    p    g    ,      .      @mhnk_rsft
+  lctl lmet    @tel                 spc            @mml   prnt   @lrld_rctl
 )
 (deflayer tab_extend_layer
-  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
-  tab  esc  _    _    _    _    _    _    home up   end  del  ins  _
-  _    met  alt  sft  ctl  _    _    _    left down rght bks  ret
-  lsft _    _    _    _    _    _    pgup pgdn _    _    _
+  _    f1   f2   f3   f4   f5   f6   f12  f7   f8   f9   f10  f11  bspc
+  tab  esc  _    _    _    _    _    _    _ _  _    _    del    bks
+  _    met  alt  sft  ctl  _    _    _    left down up   rght ret
+  lsft _    _    home    pgdn    _    _    _    pgup    end    ins  _
   lctl _    _              spc            _    _    _
 )
 (deflayer mouse_move_layer
-  _    mute voldwn volu prev pp    next _    _    _    brdn bru  _    _
-  _    _    @sms   @fms _    _     _    _    @mwl @ma↑ @mwr del  ins  _
-  @syl met  alt    sft  ctl  mrgt  _    _    @ma← @ma↓ @ma→ bks  ret
-  _    _    _      _    _    _     _    @mwu @mwd _    _    _
+  _    prev voldwn pp  volu next  mute  _    _    _    brdn prnt bru  _
+  _    _    @sms   @fms _    _     _    _    _ _ _  _   _    _
+  @syl met  alt    sft  ctl  mrgt  _    _    @ma← @ma↓ @ma↑ @ma→ ret
+  _    _    _      @mwl    @mwd    _     _    _     @mwu  @mwr  _    _
   _    _    _                mlft            _    _    _
 )
 (deflayer symbols_layer

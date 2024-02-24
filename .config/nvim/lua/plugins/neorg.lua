@@ -1,3 +1,5 @@
+local workspaces = dofile(vim.fn.expand("~/Sync/docs/code/nvim/neorg_workspaces.lua"))
+local default_workspace = dofile(vim.fn.expand("~/Sync/docs/code/nvim/neorg_default_workspace.lua"))
 return {
   {
     "nvim-neorg/neorg",
@@ -11,9 +13,10 @@ return {
           ["core.concealer"] = {}, -- Adds pretty icons to your documents
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
-              workspaces = {
-                notes = "~/notes",
-              },
+              workspaces = workspaces,
+              default_workspace = "sync_docs",
+              autochdir = true,
+              index = "index.norg"
             },
           },
         },

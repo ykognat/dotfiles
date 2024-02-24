@@ -39,7 +39,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg ~/Media/Wallpapers/lainpaper.jpg fill
+output * bg ~/Media/Wallpapers/671320.jpg fill
 #
 # Example configuration:
 #
@@ -322,6 +322,10 @@ default_border pixel 1
 # start key remapper, hold lctrl + space + esc to shut it down
 bindsym $mod+Home exec sudo /usr/local/bin/kanata --cfg /home/peter/.config/kanata/keymap.kbd
 exec sudo /usr/local/bin/kanata --cfg /home/peter/.config/kanata/keymap.kbd
+
+bindsym Mod4+Mod1+Shift+Control+f exec \
+  swaymsg -t get_tree | jq -r '.. | select(.type? == "con" and .window_properties?.class? and .window_properties.class == "firefox") | .id' | \
+  xargs -I{} swaymsg '[con_id={}]' focus
 
 
 # autostart apps
