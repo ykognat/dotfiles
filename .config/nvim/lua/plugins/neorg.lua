@@ -1,5 +1,5 @@
-local workspaces = dofile(vim.fn.expand("~/Sync/docs/code/nvim/neorg_workspaces.lua"))
-local default_workspace = dofile(vim.fn.expand("~/Sync/docs/code/nvim/neorg_default_workspace.lua"))
+local workspaces = dofile(vim.fn.expand("~/Sync/docs/g/nvim/neorg_workspaces.lua"))
+local default_workspace = dofile(vim.fn.expand("~/Sync/docs/g/nvim/neorg_default_workspace.lua"))
 return {
   {
     "nvim-neorg/neorg",
