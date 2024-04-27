@@ -263,6 +263,9 @@ bindsym --to-code {
   ## editor
   #$mod+x       exec swaymsg [app_id=$editor_id] scratchpad show || exec $editor, $t_pos
 }
+
+for_window [class="steam_app*"] inhibit_idle focus
+
 exec $term
 ##############
 #

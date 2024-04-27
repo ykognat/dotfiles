@@ -125,7 +125,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
-export PATH=/home/peter/.local/bin:$PATH
+export PATH=/home/peter/.local/bin:/home/peter/.global-node-modules/bin:$PATH
 
 # Aliases
 alias ll='eza -lah'

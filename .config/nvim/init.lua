@@ -17,3 +17,4 @@ vim.o.termguicolors = true
 require("lazy").setup("plugins")
 require("settings")
 require("keymappings")
+require("lsp_configuration")

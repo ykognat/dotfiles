@@ -1,11 +1,11 @@
 local workspaces = dofile(vim.fn.expand("~/Sync/docs/g/nvim/neorg_workspaces.lua"))
 local default_workspace = dofile(vim.fn.expand("~/Sync/docs/g/nvim/neorg_default_workspace.lua"))
 return {
-  {
     "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    -- tag = "*",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "luarocks.nvim" },
+    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = "*", -- Pin Neorg to the latest stable release
+    config = true,
     config = function()
       require("neorg").setup {
         load = {
@@ -22,5 +22,4 @@ return {
         },
       }
     end,
-  },
 }
