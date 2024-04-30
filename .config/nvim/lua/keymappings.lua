@@ -6,6 +6,16 @@ vim.api.nvim_set_keymap('n', '<leader>tf', ':Telescope find_files<CR>', { norema
 -- vim.api.nvim_set_keymap('n', '<c-w>=', ':vertical resize +5<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<c-w>,', ':resize -5<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<c-w>.', ':resize +5<CR>', { noremap = true, silent = true })
+vim.api.nvim_create_user_command(
+    "SaveAs",
+    function(opts)
+      SaveAsUser(opts.args)
+    end,
+    {
+      nargs = 1,
+      desc = "Save the current file as a specified user"
+    }
+)
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function()

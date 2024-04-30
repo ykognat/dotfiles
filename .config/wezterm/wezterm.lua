@@ -15,8 +15,11 @@ end
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
 -- config.color_scheme = 'zenburned'
-config.colors = {
-  background = 'rgba(0 0 0 40%)',
+config = {
+  font = wezterm.font 'Mononoki Nerd Font',
+  window_decorations = "RESIZE",
+  hide_tab_bar_if_only_one_tab = true,
+  window_background_opacity = 0.6
 }
 
 -- and finally, return the configuration to wezterm
