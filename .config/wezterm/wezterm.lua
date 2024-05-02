@@ -19,27 +19,27 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
   if tab.is_active then
     return {
-      { Background = { Color = "#000" } },
-      { Foreground = { Color = "#fff" } },
-      { Text = SOLID_LEFT_ARROW },
-      { Background = { Color = "#fff" } },
-      { Foreground = { Color = "#000" } },
+      { Background = { Color = "rgba(0,0,0, 80%)" } },
+      { Foreground = { Color = "rgba(255,255,255, 100%)" } },
+      -- { Text = SOLID_LEFT_ARROW },
+      { Background = { Color = "rgba(255,255,255, 100%)" } },
+      { Foreground = { Color = "rgba(0,0,0, 100%)" } },
       { Text = (tab.tab_index + 1) .. ": " .. title .. " " },
-      { Background = { Color = "#000" } },
-      { Foreground = { Color = "#fff" } },
-      { Text = SOLID_RIGHT_ARROW },
+      { Background = { Color = "rgba(0,0,0, 80%)" } },
+      { Foreground = { Color = "rgba(255,255,255, 100%)" } },
+      -- { Text = SOLID_RIGHT_ARROW },
     }
   else
     return {
-      { Background = { Color = "#000" } },
-      { Foreground = { Color = "#000" } },
-      { Text = SOLID_LEFT_ARROW },
-      { Background = { Color = "#000" } },
+      -- { Background = { Color = "rgba(0,0,0, 80%)" } },
+      -- { Foreground = { Color = "#000" } },
+      -- { Text = SOLID_LEFT_ARROW },
+      { Background = { Color = "rgba(0,0,0, 80%)" } },
       { Foreground = { Color = "#fff" } },
       { Text = (tab.tab_index + 1) .. ": " .. title .. " " },
-      { Background = { Color = "#000" } },
-      { Foreground = { Color = "#000" } },
-      { Text = SOLID_RIGHT_ARROW },
+      -- { Background = { Color = "#000" } },
+      -- { Foreground = { Color = "#000" } },
+      -- { Text = SOLID_RIGHT_ARROW },
     }
   end
 end)
@@ -50,8 +50,9 @@ config = {
   window_decorations = "RESIZE",
   hide_tab_bar_if_only_one_tab = true,
   window_background_opacity = 0.8,
+  use_fancy_tab_bar = false,
   window_frame = {
-    font = wezterm.font { family = 'Mononoki Nerd Font', weight = 'Bold' },
+    font = wezterm.font { family = 'Mononoki Nerd Font', weight = 'Regular' },
 
     -- The size of the font in the tab bar.
     -- Default to 10.0 on Windows but 12.0 on other systems
@@ -59,15 +60,17 @@ config = {
 
     -- The overall background color of the tab bar when
     -- the window is focused
-    active_titlebar_bg = '#000',
+    -- active_titlebar_bg = 'none',
 
     -- The overall background color of the tab bar when
     -- the window is not focused
-    inactive_titlebar_bg = '#000',
+    -- inactive_titlebar_bg = 'none',
   },
   colors = {
     tab_bar = {
+      background = 'rgba(0,0,0, 80%)',
       inactive_tab_edge = '#000',
+      font_size = 8,
       active_tab = {
         bg_color = '#fff',
         fg_color = '#000',
@@ -91,7 +94,7 @@ config = {
         -- can also be used for `inactive_tab`.
       },
       new_tab = {
-        bg_color = '#000',
+        bg_color = 'rgba(0, 0, 0, 80%)',
         fg_color = '#fff',
         -- The same options that were listed under the `active_tab` section above
         -- can also be used for `new_tab`.
