@@ -70,7 +70,6 @@ config = {
     tab_bar = {
       background = 'rgba(0,0,0, 80%)',
       inactive_tab_edge = '#000',
-      font_size = 8,
       active_tab = {
         bg_color = '#fff',
         fg_color = '#000',
