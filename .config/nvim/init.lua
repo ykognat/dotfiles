@@ -15,6 +15,7 @@ if not vim.loop.fs_stat(lazypath) then
 vim.opt.rtp:prepend(lazypath)
 vim.o.termguicolors = true
 require("lazy").setup("plugins")
+require("utils/save_as")
 require("settings")
 require("keymappings")
 require("lsp_configuration")
