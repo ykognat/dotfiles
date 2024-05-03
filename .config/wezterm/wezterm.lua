@@ -12,6 +12,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
   -- The filled in variant of the > symbol
   local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+  local LEFT_HALF_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick
+  local RIGHT_HALF_CIRCLE = wezterm.nerdfonts.ple_right_half_circle_thick
 
   local title = tab.active_pane.title
   if tab.tab_title and #tab.tab_title > 0 then
@@ -22,12 +24,14 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
       { Background = { Color = "rgba(0,0,0, 80%)" } },
       { Foreground = { Color = "rgba(255,255,255, 100%)" } },
       -- { Text = SOLID_LEFT_ARROW },
+      { Text = LEFT_HALF_CIRCLE },
       { Background = { Color = "rgba(255,255,255, 100%)" } },
       { Foreground = { Color = "rgba(0,0,0, 100%)" } },
       { Text = (tab.tab_index + 1) .. ": " .. title .. " " },
       { Background = { Color = "rgba(0,0,0, 80%)" } },
       { Foreground = { Color = "rgba(255,255,255, 100%)" } },
       -- { Text = SOLID_RIGHT_ARROW },
+      { Text = RIGHT_HALF_CIRCLE },
     }
   else
     return {
