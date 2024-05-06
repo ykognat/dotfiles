@@ -22,16 +22,17 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   if tab.is_active then
     return {
       { Background = { Color = "rgba(0,0,0, 80%)" } },
-      { Foreground = { Color = "rgba(255,255,255, 100%)" } },
+      { Foreground = { Color = "rgba(201, 84, 93, 100%)" } },
       -- { Text = SOLID_LEFT_ARROW },
-      { Text = LEFT_HALF_CIRCLE },
-      { Background = { Color = "rgba(255,255,255, 100%)" } },
-      { Foreground = { Color = "rgba(0,0,0, 100%)" } },
+      -- { Text = LEFT_HALF_CIRCLE },
+      { Text = "|" },
+      { Background = { Color = "rgba(0, 0, 0, 80%)" } },
+      { Foreground = { Color = "rgba( 201, 84, 93 , 100%)" } },
       { Text = (tab.tab_index + 1) .. ": " .. title .. " " },
       { Background = { Color = "rgba(0,0,0, 80%)" } },
       { Foreground = { Color = "rgba(255,255,255, 100%)" } },
       -- { Text = SOLID_RIGHT_ARROW },
-      { Text = RIGHT_HALF_CIRCLE },
+      -- { Text = RIGHT_HALF_CIRCLE },
     }
   else
     return {
