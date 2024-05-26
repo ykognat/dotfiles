@@ -1,6 +1,6 @@
 local ftMap = {
     vim = "indent",
-    python = { "lsp" },
+    python = { "treesitter" },
     git = "",
 }
 

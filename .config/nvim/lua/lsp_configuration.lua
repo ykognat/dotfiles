@@ -18,7 +18,7 @@ local lspconfig = require('lspconfig')
 --     }
 -- end
 -- local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
-local language_servers = { 'pyright' }
+local language_servers = { 'pyright', 'rust_analyzer' }
 for _, ls in ipairs(language_servers) do
     require('lspconfig')[ls].setup({
         capabilities = capabilities
