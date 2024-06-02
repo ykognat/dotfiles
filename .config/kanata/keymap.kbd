@@ -1,6 +1,6 @@
 (defvar
-  tap-timeout   180
-  hold-timeout  180
+  tap-timeout   160
+  hold-timeout  160
   tt $tap-timeout
   ht $hold-timeout
 )
@@ -50,6 +50,7 @@
   (i) @i_meta
   (s i) esc
 )
+;; usage -> (chord siesc s)
 (defsrc
   esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
@@ -68,14 +69,14 @@
   _    f1   f2   f3   f4   f5   f6   f12  f7   f8   f9   f10  f11  bspc
   tab  esc  _    _    _    _    _    _    _ _  _    _    del    bks
   _    met  alt  sft  ctl  _    _    _    left down up   rght ret
-  lsft _    _    home    pgdn    _    _    _    pgup    end    ins  _
+  lsft _    pgdn    home    _    _    _    _    end    pgup    ins  _
   lctl _    _              spc            _    _    _
 )
 (deflayer mouse_move_layer
-  _    prev voldwn pp  volu next  mute  _    _    _    brdn prnt bru  _
+  _    prev voldwn pp  volu next  mute  _    _    _    prnt brdn bru  _
   _    _    @sms   @fms _    _     _    _    _ _ _  _   _    _
   @syl met  alt    sft  ctl  mrgt  _    _    @ma← @ma↓ @ma↑ @ma→ ret
-  _    _    _      @mwl    @mwd    _     _    _     @mwu  @mwr  _    _
+  _    _    @mwd      @mwl    _    _     _    _     @mwr  @mwu  _    _
   _    _    _                mlft            _    _    _
 )
 (deflayer symbols_layer
