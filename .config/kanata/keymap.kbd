@@ -40,12 +40,12 @@
   fms (movemouse-speed 400)
   sms (movemouse-speed 10)
 )
-(defchords fycaps 200
+(defchords fycaps 25
   (f) f
   (y) y
   (f y) (caps-word 2000)
 )
-(defchords siesc 200
+(defchords siesc 25
   (s) @s_meta
   (i) @i_meta
   (s i) esc
@@ -67,9 +67,9 @@
 )
 (deflayer tab_extend_layer
   _    f1   f2   f3   f4   f5   f6   f12  f7   f8   f9   f10  f11  bspc
-  tab  esc  _    _    _    _    _    _    _ _  _    _    del    bks
+  tab  esc  _    _    _    _    _    _    _    bks  del  rpt-any    del    bks
   _    met  alt  sft  ctl  _    _    _    left down up   rght ret
-  lsft _    pgdn    home    _    _    _    _    end    pgup    ins  _
+  lsft _    pgdn home _    _    _    _    end  pgup ins  _
   lctl _    _              spc            _    _    _
 )
 (deflayer mouse_move_layer
