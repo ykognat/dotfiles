@@ -1,6 +1,7 @@
 vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tb', ':Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tf', ':Telescope find_files<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<s-tab>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.api.nvim_create_user_command(
     "SaveAs",
     function(opts)
