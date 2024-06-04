@@ -74,8 +74,8 @@
 (deflayer mouse_move_layer
   _    prev voldwn pp  volu next  mute  _    _    _    prnt brdn bru  _
   _    _    @sms   @fms _    _     _    _    _ _ _  _   _    _
-  @syl met  alt    sft  ctl  mrgt  _    _    @ma← @ma↓ @ma↑ @ma→ ret
-  _    _    @mwd      @mwl    _    _     _    _     @mwr  @mwu  _    _
+  @syl met  alt    sft  ctl  mrgt  _    mmid @ma← @ma↓ @ma↑ @ma→ ret
+  _    _    @mwd      @mwl   mbck  _    _    mfwd @mwr  @mwu  _    _
   _    _    _                mlft            _    _    _
 )
 (deflayer symbols_layer
