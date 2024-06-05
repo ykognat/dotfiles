@@ -5,3 +5,13 @@ function SaveAsUser(user)
   vim.api.nvim_command('edit!')
   vim.api.nvim_command('set autoread')
 end
+vim.api.nvim_create_user_command(
+    "SaveAs",
+    function(opts)
+        SaveAsUser(opts.args)
+    end,
+    {
+        nargs = 1,
+        desc = "Save the current file as a specified user"
+    }
+)

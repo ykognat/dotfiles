@@ -1,17 +1,35 @@
-vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>tb', ':Telescope buffers<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>tf', ':Telescope find_files<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<s-tab>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.api.nvim_create_user_command(
-    "SaveAs",
-    function(opts)
-        SaveAsUser(opts.args)
-    end,
-    {
-        nargs = 1,
-        desc = "Save the current file as a specified user"
-    }
-)
+local keymap = vim.keymap.set
+local tb = require('telescope.builtin')
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap('n', '<leader>tbb', ':Telescope buffers<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tf', ':Telescope find_files<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tsg', ':Telescope grep_string<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tsl', ':Telescope live_grep<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tc', ':Telescope commands<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope tags<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tm', ':Telescope man_pages<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tbf', ':Telescope current_buffer_fuzzy_find<CR>', 
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tlr', ':Telescope lsp_references<CR>', 
+    { noremap = true, silent = true })
+keymap('v', '<leader>tsg', function()
+	local text = vim.getVisualSelection()
+	tb.current_buffer_fuzzy_find({ default_text = text })
+end, opts)
+keymap('v', '<leader>tsl', function()
+	local text = vim.getVisualSelection()
+	tb.live_grep({ default_text = text })
+end, opts)
+
+vim.keymap.set("n", "<s-tab>", "<CMD>Oil<CR>", 
+    { desc = "Open parent directory" })
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function()
@@ -34,3 +52,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
         -- bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
     end})
+
