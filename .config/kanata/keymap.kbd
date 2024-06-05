@@ -66,9 +66,9 @@
 )
 (deflayer tab_extend_layer
   _    f1   f2   f3   f4   f5   f6   f12  f7   f8   f9   f10  f11  bspc
-  tab  esc  (dynamic-macro-record 1)   dynamic-macro-record-stop    (dynamic-macro-play 1)   _    _    _    _    bks  del  rpt-any    del    bks
+  tab  esc  (dynamic-macro-record 1)   dynamic-macro-record-stop    (dynamic-macro-play 1)   _    _    _    ins    bks  del  rpt-any    del    bks
   _    met  alt  sft  ctl  _    _    _    left down up   rght ret
-  lsft _    pgdn home _    _    _    _    end  pgup ins  _
+  lsft _    pgdn home _    _    _    _    end  pgup _  _
   lctl _    _              spc            _    _    _
 )
 (deflayer mouse_move_layer
