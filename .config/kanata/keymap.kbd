@@ -1,6 +1,6 @@
 (defvar
-  tap-timeout   160
-  hold-timeout  160
+  tap-timeout   130
+  hold-timeout  130
   tt $tap-timeout
   ht $hold-timeout
 )
@@ -66,17 +66,17 @@
 )
 (deflayer tab_extend_layer
   _    f1   f2   f3   f4   f5   f6   f12  f7   f8   f9   f10  f11  bspc
-  tab  esc  (dynamic-macro-record 1)   dynamic-macro-record-stop    (dynamic-macro-play 1)   _    _    _    ins    bks  del  rpt-any    del    bks
-  _    met  alt  sft  ctl  _    _    _    left down up   rght ret
-  lsft _    pgdn home _    _    _    _    end  pgup _  _
-  lctl _    _              spc            _    _    _
+  tab  esc  (dynamic-macro-record 1)   dynamic-macro-record-stop    (dynamic-macro-play 1)   _    _    _    _    bks  del  ins    _    _
+  _    met  alt  sft  ctl  _    caps    comp    left down up   rght ret
+  lsft _    pgdn home _    _    _    _    end  pgup rpt-any  _
+  lctl lmet    lalt              spc            _    _    _
 )
 (deflayer mouse_move_layer
   _    prev voldwn pp  volu next  mute  _    _    _    prnt brdn bru  _
-  _    _    @sms   @fms _    _     _    _    _ _ _  _   _    _
+  tab    _    @sms   @fms _    _     _    _    _ _ _  _   _    _
   @syl met  alt    sft  ctl  mrgt  _    mmid @ma← @ma↓ @ma↑ @ma→ ret
-  _    _    @mwd      @mwl   mbck  _    _    mfwd @mwr  @mwu  _    _
-  _    _    _                mlft            _    _    _
+  lsft    _    @mwd      @mwl   mbck  _    _    mfwd @mwr  @mwu  _    _
+  lctl    lmet    lalt                mlft            _    _    _
 )
 (deflayer symbols_layer
   _    _    _    _    _    _     _    _    _    _    _    _    _    _
