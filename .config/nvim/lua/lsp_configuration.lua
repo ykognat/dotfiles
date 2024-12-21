@@ -7,7 +7,6 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 -- local servers = { 'pyright' }
@@ -18,13 +17,36 @@ local lspconfig = require('lspconfig')
 --     }
 -- end
 -- local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
-local language_servers = { 'pyright', 'rust_analyzer' }
-for _, ls in ipairs(language_servers) do
-    require('lspconfig')[ls].setup({
+
+-- Using your existing lspconfig variable
+local lspconfig = require('lspconfig')
+
+-- Basic servers
+local basic_servers = { 'pyright', 'rust_analyzer' }
+for _, ls in ipairs(basic_servers) do
+    lspconfig[ls].setup({
         capabilities = capabilities
-        -- you can add other fields for setting up lsp server in this table
+        -- other basic settings
     })
 end
+
+-- Nixd with special config
+lspconfig.nixd.setup({
+   capabilities = capabilities,
+   on_attach = on_attach,
+   settings = {
+      nixd = {
+         nixpkgs = {
+            -- Use the flake's nixpkgs directly since we're editing a flake
+            expr = "(builtins.getFlake (toString ./.)).inputs.nixpkgs"
+         },
+         eval = {
+            enable = true,
+            depth = 2
+         }
+      }
+   }
+})
 
 -- luasnip setup
 local luasnip = require 'luasnip'
