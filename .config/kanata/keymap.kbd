@@ -61,22 +61,22 @@
   grv  1       2      3      4      5    6    \    7      8      9      0       =  bspc
   tab  (chord fycaps f)       l      h      v      z    [    '    w      u      o      (chord fycaps y)       -  ;
   @tel (chord siesc s) @r_alt @n_sft @t_ctl k    ]    c    @d_ctl @e_sft @a_alt (chord siesc i)    ret
-  lsft j       b      m      q      x    /    p    g    ,      .      @mhnk_rsft
+  lsft j       b      m      q      x    /    p    g    ,      .      mhnk
   lctl lmet    @tel                 spc            @mml   prnt   @lrld_rctl
 )
 (deflayer tab_extend_layer
   _    f1   f2   f3   f4   f5   f6   f12  f7   f8   f9   f10  f11  bspc
-  tab  esc  (dynamic-macro-record 1)   dynamic-macro-record-stop    (dynamic-macro-play 1)   _    _    _    _    bks  del  ins    _    _
-  _    met  alt  sft  ctl  _    caps    comp    left down up   rght ret
-  lsft _    pgdn home _    _    _    _    end  pgup rpt-any  _
-  lctl lmet    lalt              spc            _    _    _
+  tab  esc  (dynamic-macro-record 1)   dynamic-macro-record-stop    (dynamic-macro-play 1)   _    _    _    ins    bks  del  rpt-any    del    bks
+  _    met  alt  sft  ctl  caps _    comp left down up   rght ret
+  lsft _    pgdn home _    _    _    _    end  pgup _  _
+  lctl lmet lalt              spc         _    _    _
 )
 (deflayer mouse_move_layer
   _    prev voldwn pp  volu next  mute  _    _    _    prnt brdn bru  _
-  tab    _    @sms   @fms _    _     _    _    _ _ _  _   _    _
+  _    _    @sms   @fms _    _     _    _    _ _ _  _   _    _
   @syl met  alt    sft  ctl  mrgt  _    mmid @ma← @ma↓ @ma↑ @ma→ ret
-  lsft    _    @mwd      @mwl   mbck  _    _    mfwd @mwr  @mwu  _    _
-  lctl    lmet    lalt                mlft            _    _    _
+  lsft _    @mwd      @mwl   mbck  _    _    mfwd @mwr  @mwu  _    _
+  lctl lmet lalt                mlft            _    _    _
 )
 (deflayer symbols_layer
   _    _    _    _    _    _     _    _    _    _    _    _    _    _

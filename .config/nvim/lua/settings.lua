@@ -65,4 +65,4 @@ o.conceallevel = 2
 o.autochdir = false
 
 
-vim.cmd([[colorscheme moonfly]])
+vim.cmd([[colorscheme everforest]])
